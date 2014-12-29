@@ -1,0 +1,52 @@
+<html>
+<head>
+	<!-- OpenLayers core js -->
+	<script type="text/javascript"
+	src="js/OpenLayers-2.12/OpenLayers.js">
+	</script>
+
+	<script type="text/javascript"
+	src="js/OpenLayers-2.12/AnimatedCluster.js">
+	</script>
+
+	<script type="text/javascript"
+	src="js/OpenLayers-2.12/lib/deprecated.js">
+	</script>
+ 
+	<!-- OpenStreetMap base layer js -->
+	<script type="text/javascript"
+	src="http://www.openstreetmap.org/openlayers/OpenStreetMap.js">
+	</script>
+ 
+	<!-- Google Maps -->
+	<script
+	src="http://maps.google.com/maps/api/js?sensor=false">
+	</script>
+
+	<script type="text/javascript" src="js/CSSPopup.js"></script>
+
+	<script type="text/javascript" src="js/index_ebird.js"></script>
+	<script type="text/javascript" src="js/utili.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>	
+	<link rel="stylesheet" type="text/css" href="css/CSSPopup.css"/>
+
+</head>
+
+<body onload="init()">
+
+	<div id="map" style="width:100%; height:92%;"></div>
+
+	<div id="radio">Query on layer: 
+		<input type="radio" name="query" id="efforts">Sampling Events
+		<input type="radio" name="query" id="sp" checked>Bird Records
+	</div>
+
+	<div style="background-color: white;">Type in CQL filter here:
+		<input type="text" id="cql" style="width:80%; display:inline;background-color:#E6E6E6; font-family:'Times New Roman', Georgia, Serif;font-weight:bold;" value = "observation_date > '2012-04-30Z' AND observation_date < '2012-09-01Z'">
+		<button style = "display: inline; float: right;" onclick="query()">Submit Query</button>
+		<div id="msg" style="font-size: 0.8em;">Message: ...</div>
+	</div>
+
+</body>
+</html>
